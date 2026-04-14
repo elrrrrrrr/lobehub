@@ -19,6 +19,9 @@ runs:
       with:
         run_install: false
 
+    - name: Install utoo
+      uses: utooland/setup-utoo@3a51006d0b66afcc32d1b9177a4b200b74f4a8cb
+
     - name: Install bun
       uses: oven-sh/setup-bun@v2
 
