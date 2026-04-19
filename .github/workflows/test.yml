@@ -41,7 +41,7 @@ jobs:
         uses: ./.github/actions/setup-env
 
       - name: Install deps
-        run: ut install --from pnpm
+        run: ut install --from pnpm --ignore-scripts
 
       - name: Test packages with coverage
         run: |
@@ -107,7 +107,7 @@ jobs:
         uses: ./.github/actions/setup-env
 
       - name: Install deps
-        run: ut install --from pnpm
+        run: ut install --from pnpm --ignore-scripts
 
       - name: Run tests
         run: bunx vitest --coverage --silent='passed-only' --reporter=default --reporter=blob --shard=${{ matrix.shard }}/2
@@ -134,7 +134,7 @@ jobs:
         uses: ./.github/actions/setup-env
 
       - name: Install deps
-        run: ut install --from pnpm
+        run: ut install --from pnpm --ignore-scripts
 
       - name: Download blob reports
         uses: actions/download-artifact@v7
@@ -166,8 +166,11 @@ jobs:
       - name: Setup environment
         uses: ./.github/actions/setup-env
 
-      - name: Install deps
-        run: ut install --from pnpm
+      - name: Install root deps
+        run: ut install --from pnpm --ignore-scripts
+
+      - name: Install desktop deps
+        run: ut install --from pnpm --ignore-scripts
         working-directory: apps/desktop
         env:
           NODE_OPTIONS: --max-old-space-size=8192
@@ -213,7 +216,7 @@ jobs:
         uses: ./.github/actions/setup-env
 
       - name: Install deps
-        run: ut install --from pnpm
+        run: ut install --from pnpm --ignore-scripts
 
       - name: Lint
         run: bun run lint
