@@ -170,7 +170,7 @@ jobs:
         run: ut install --from pnpm --ignore-scripts
 
       - name: Install desktop deps
-        run: ut install --from pnpm --ignore-scripts
+        run: ut install --from pnpm
         working-directory: apps/desktop
         env:
           NODE_OPTIONS: --max-old-space-size=8192
