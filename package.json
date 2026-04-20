@@ -266,6 +266,7 @@
     "@lobehub/charts": "^5.0.0",
     "@lobehub/desktop-ipc-typings": "workspace:*",
     "@lobehub/editor": "^4.8.1",
+    "@lobehub/fluent-emoji": "^4.1.0",
     "@lobehub/icons": "^5.0.0",
     "@lobehub/market-sdk": "0.32.2",
     "@lobehub/tts": "^5.1.2",
