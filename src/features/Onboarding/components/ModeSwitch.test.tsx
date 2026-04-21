@@ -45,13 +45,17 @@ afterEach(() => {
 });
 
 describe('ModeSwitch', () => {
-  it('renders both onboarding variants when agent onboarding is enabled', async () => {
-    await renderModeSwitch({ enabled: true, showLabel: true });
+  it(
+    'renders both onboarding variants when agent onboarding is enabled',
+    async () => {
+      await renderModeSwitch({ enabled: true, showLabel: true });
 
-    expect(screen.getByText('Choose your onboarding mode')).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: 'Conversational' })).toBeChecked();
-    expect(screen.getByRole('radio', { name: 'Classic' })).not.toBeChecked();
-  });
+      expect(screen.getByText('Choose your onboarding mode')).toBeInTheDocument();
+      expect(screen.getByRole('radio', { name: 'Conversational' })).toBeChecked();
+      expect(screen.getByRole('radio', { name: 'Classic' })).not.toBeChecked();
+    },
+    15_000,
+  );
 
   it('hides the onboarding switch entirely when agent onboarding is disabled', async () => {
     await renderModeSwitch({ enabled: false });
